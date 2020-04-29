@@ -3,7 +3,7 @@
 
 Proyecto de partida para la realización de la práctica 3 de
 Verificación y Validación del Grado en Ingeniería Informática de
-la Universidad de de Zaragoza. El enunciado completo se
+la Universidad de Zaragoza. El enunciado completo se
 encuentra en Moodle. 
 
 Todos los ficheros están codificados utilizando UTF-8. 

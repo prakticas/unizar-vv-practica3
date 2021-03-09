@@ -34,8 +34,8 @@ public class ContadorDeLetras {
 
     /**
      * Si no ha sido analizado ya, analiza el contenido del fichero de texto asociado a este
-     * objeto. Devuelve un vector de 27 componentes con las frecuencias absolutas de
-     * aparición de cada letra del alfabeto español en el fichero.
+     * objeto en el constructor. Devuelve un vector de 27 componentes con las frecuencias
+     * absolutas de aparición de cada letra del alfabeto español en el fichero.
      *
      * @return vector de 27 componentes de tipo entero. Las primeras 26 componentes almacenan el
      *         número de apariciones de las 26 letras del alfabeto inglés: la componente indexada

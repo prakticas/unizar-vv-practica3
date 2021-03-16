@@ -52,7 +52,6 @@ public class Main {
             int i=0;
             char act='A';
             while(i<14){
-                System.out.println();
                 System.out.println(act + ": " + frec[i]);
                 act++;
                 i++;
@@ -60,8 +59,6 @@ public class Main {
             System.out.println("Ñ" + ": " + frec[i]);
             i++;
             while(i<27){
-                System.out.println();
-
                 System.out.println(act + ": " + frec[i]);
                 act++;
                 i++;

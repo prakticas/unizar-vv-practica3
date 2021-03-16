@@ -2,6 +2,7 @@ package es.unizar.eina.vv6f.practica3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  * Clase para el análisis de la frecuencia de aparición de letras del alfabeto español en un
@@ -19,6 +20,7 @@ import java.io.FileNotFoundException;
  *
  */
 public class ContadorDeLetras {
+
     private File fichero;
     private int[] frecuencias = null;
 
@@ -29,7 +31,10 @@ public class ContadorDeLetras {
      *            fichero de texto cuyo contenido será analizado.
      */
     public ContadorDeLetras(File fichero) {
-        // TODO
+        Scanner sc = new Scanner(fichero);
+        if (fichero.canRead()){
+            fichero.
+        }
     }
 
     /**
@@ -48,7 +53,7 @@ public class ContadorDeLetras {
      */
     public int[] frecuencias() throws FileNotFoundException {
         if (frecuencias == null) {
-            // TODO
+            return this.frecuencias;
         }
         return frecuencias;
     }

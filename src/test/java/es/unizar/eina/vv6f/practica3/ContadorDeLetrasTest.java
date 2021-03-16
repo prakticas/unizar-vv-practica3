@@ -7,20 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ContadorDeLetrasTest {
     @Test
-    public void testTrianguloLados_3_3_3_esEquilatero() throws FileNotFoundException {
-        File regenta = new File("/src/main/res/regenta.txt");
-        File quijote = new File("/src/main/res/quijote.txt");
-        File hamlet = new File("/src/main/res/hamlet.txt");
-        ContadorDeLetras contador = new ContadorDeLetras(regenta);
-        int[] frecuenciasObtenido = contador.frecuencias();
-        assertEquals(TipoTriangulo.EQUILATERO,
-                tipoObtenido);
-    }
-    @Test
-    public void testTrianguloLados_3_3_2_esIsosceles() {
-        Triangulo triangulo = new Triangulo(3, 3, 2);
-        TipoTriangulo tipoObtenido = triangulo.tipo();
-        assertEquals(TipoTriangulo.ISOSCELES,
-                tipoObtenido);
+    public void prueba1() throws FileNotFoundException {
+        ContadorDeLetras contadorDeLetras = new ContadorDeLetras(new File("/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba1.txt"));
+        int[] ficheroObtenido = contadorDeLetras.frecuencias();
+        int [] resultado=new int[27];
+        r[0]=5;r[2]=2;r['ñ'-'a']=2;
+
+        assertArrayEquals(ficheroObtenido,r);
     }
 }

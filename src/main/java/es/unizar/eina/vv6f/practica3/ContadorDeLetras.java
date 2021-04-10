@@ -56,10 +56,13 @@ public class ContadorDeLetras {
             while(sc.hasNextLine()) {
                 String line = sc.nextLine();
                 for (int x=0;x<line.length();x++){
-                    char c = line.charAt(x);
-                    frecuencias[c-'A']++;
+                    Character c = line.charAt(x);
+                    if(Character.isLowerCase(c))
+                    frecuencias[c-'a']++;
+                    else if(Character.isUpperCase(c))
+                        frecuencias[c-'a']++;
+                    else ('ñ'==c)
                 }
-
 
             }
             sc.close();

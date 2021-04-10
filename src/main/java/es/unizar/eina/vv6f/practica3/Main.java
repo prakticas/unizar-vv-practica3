@@ -1,5 +1,13 @@
 package es.unizar.eina.vv6f.practica3;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.CharBuffer;
+
 /**
  * Programa Java que, al iniciar su ejecución, solicita al usuario el nombre de un fichero de texto.
  * A continuación, si el fichero existe y se puede leer, muestra en la salida estándar una lista de
@@ -31,7 +39,42 @@ public class Main {
      *            no utilizado.
      */
     public static void main(String[] args) {
-        // TODO
+        System.out.print("Introduzca el nombre de un fichero de texto: ");
+        InputStreamReader isr = new InputStreamReader(System.in);
+        String texto="";
+        try {
+            BufferedReader br = new BufferedReader(isr);
+            texto = br.readLine();
+            System.out.println(texto);
+            File fichero = new File(texto);
+            ContadorDeLetras cl= new ContadorDeLetras(fichero);
+            int [] frec = cl.frecuencias();
+            int i=0;
+            char act='A';
+            while(i<14){
+                System.out.println(act + ": " + frec[i]);
+                act++;
+                i++;
+            }
+            System.out.println("Ñ" + ": " + frec[i]);
+            i++;
+            while(i<27){
+                System.out.println(act + ": " + frec[i]);
+                act++;
+                i++;
+            }
+
+        }
+        catch(FileNotFoundException fne){
+            System.out.println("El fichero '" + texto + "' no existe.");
+        }
+        catch(IOException ioe){
+            System.out.println(ioe);
+        }
+        catch(NullPointerException npe){
+            System.out.println(npe);
+        }
+
     }
 
     

@@ -70,6 +70,7 @@ public class ContadorDeLetras {
      */
     public int[] frecuencias() throws FileNotFoundException {
         if (frecuencias == null) {
+            System.out.println("Entramos");
             frecuencias = new int[numLetras];
             Scanner sc = new Scanner(fichero);
             while(sc.hasNextLine()) {
@@ -146,6 +147,8 @@ public class ContadorDeLetras {
                 }
             }
             sc.close();
+        }else{
+            return frecuencias;
         }
         return frecuencias;
     }

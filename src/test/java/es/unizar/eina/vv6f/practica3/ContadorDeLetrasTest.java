@@ -20,7 +20,9 @@ class ContadorDeLetrasTest {
     }
     @Test
     public void prueba2() throws FileNotFoundException {
+        contadorDeLetras = new ContadorDeLetras(new File("/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba1.txt"));
         int[] ficheroObtenido = contadorDeLetras.frecuencias();
+        ficheroObtenido = contadorDeLetras.frecuencias();
         int [] resultado=new int[27];
         resultado[0]=5;resultado[2]=2;resultado[26]=2;
 

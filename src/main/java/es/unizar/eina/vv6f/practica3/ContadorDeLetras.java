@@ -20,7 +20,7 @@ import java.io.FileNotFoundException;
  *
  */
 public class ContadorDeLetras {
-    private File fichero;
+    private final File fichero;
     private int[] frecuencias = null;
     final int numLetras =  'Z'-'A'+2;
     final String minusculas = "abcdefghijklmnopqrstuvwxyz" ;
@@ -70,7 +70,7 @@ public class ContadorDeLetras {
      */
     public int[] frecuencias() throws FileNotFoundException {
         if (frecuencias == null) {
-            System.out.println("Entramos");
+
             frecuencias = new int[numLetras];
             Scanner sc = new Scanner(fichero);
             while(sc.hasNextLine()) {
@@ -78,71 +78,70 @@ public class ContadorDeLetras {
                 for (int x=0;x<line.length();x++){
                     Character car = line.charAt(x);
                     char c = car.charValue();
-                    System.out.println("Tenemos el caracter: "+c+ " "+(int) car);
+
                     if(Mayusculas.indexOf(c)>=0){
-                        System.out.println("letra matuscula "+(int) c);
+
                         frecuencias[(int) (c - 'A')]++;
                     }
                     else if(minusculas.indexOf(c)>=0){
-                        System.out.println("letra minuscula despues de toLowerCase "+(int) c);
+
                         frecuencias[(int) (c - 'a')]++;
                     }
-                    //a acentuadas minus
                     else if(aacentuada.indexOf(c)>=0){//a
-                        System.out.println("a minuscula acentuada");
+
                         frecuencias[0]++;
                     }
                     else if(eacentuada.indexOf(c)>=0) {
                         frecuencias[(int) ('e' - 'a')]++;
-                        System.out.println("e minuscula acentuada");
+
                     }
                     else if(iacentuada.indexOf(c)>=0){
                         frecuencias[(int)('i' - 'a')]++;
-                        System.out.println("i minuscula acentuada");
+
                     }
                     else if(oacentuada.indexOf(c)>=0){
                         frecuencias[(int)('o' - 'a')]++;
-                        System.out.println("o minuscula acentuada");
+
                     }
                     else if(uacentuada.indexOf(c)>=0){
                         frecuencias[(int)('u' - 'a')]++;
-                        System.out.println("u minuscula acentuada");
+
                     }
                     else if(Aacentuada.indexOf(c)>=0){
                         frecuencias[(int)('a' - 'a')]++;
-                        System.out.println("A mayuscula acentuada");
+
                     }
                     else if(Eacentuada.indexOf(c)>=0){
                         frecuencias[(int)('e' - 'a')]++;
-                        System.out.println("E mayuscula acentuada");
+
                     }
                     else if(Iacentuada.indexOf(c)>=0) {
                         frecuencias[(int)('i' - 'a')]++;
-                        System.out.println("I mayuscula acentuada");
+
                     }
                     else if(Oacentuada.indexOf(c)>=0){
                         frecuencias[(int)('o' - 'a')]++;
-                        System.out.println("O mayuscula acentuada");
+
                     }
                     else if(Uacentuada.indexOf(c)>=0){
                         frecuencias[(int)('u' - 'a')]++;
-                        System.out.println("U mayuscula acentuada");
+
                     }
                     else if (avoladas.indexOf(c)>=0){
                         frecuencias[0]++;
-                        System.out.println("A volada");
+
                     }
                     else if (ovoladas.indexOf(c)>=0) {
                         frecuencias[(int)('o' - 'a')]++;
-                        System.out.println("O volada");
+
                     }
                     else if(enye.indexOf(c)>=0) {
                         frecuencias[26]++; // la ñ es la última componente
-                        System.out.println("ñ ");
+
                     }
                     else if (cedilla.indexOf(c)>=0) {
                         frecuencias[(int) ('c' - 'a')]++;
-                        System.out.println("Cedilla");
+
                     }
                 }
             }

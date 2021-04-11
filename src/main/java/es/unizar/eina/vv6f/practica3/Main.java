@@ -39,7 +39,7 @@ public class Main {
      *            no utilizado.
      */
     public static void main(String[] args) {
-        System.out.print("Introduzca el nombre de un fichero de texto: ");
+        System.out.print("Nombre de un fichero de texto: ");
         InputStreamReader isr = new InputStreamReader(System.in);
         String texto="";
         try {
@@ -56,9 +56,8 @@ public class Main {
                 act++;
                 i++;
             }
-            System.out.println("Ñ" + ": " + frec[i]);
-            i++;
-            while(i<27){
+            System.out.println("Ñ" + ": " + frec[26]);
+            while(i<26){
                 System.out.println(act + ": " + frec[i]);
                 act++;
                 i++;

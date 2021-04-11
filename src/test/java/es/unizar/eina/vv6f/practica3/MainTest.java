@@ -78,34 +78,28 @@ class MainTest {
         Main.main(args);
 
         boolean isTwoEqual = compararArchivos(path1,path2);
-        
+
         assertTrue(isTwoEqual);
     }
     @Test
     void prueba2() throws IOException {
-        byte[] num = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba1.txt".getBytes();
+        String path1 = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/test/res/salida-prueba1.txt";
+        String path2 = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/test/res/yes.txt";
+
+        byte[] num = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba2.txt".getBytes();
         bInput = new ByteArrayInputStream(num);
-        File tempFile=File.createTempFile("hello", ".tmp");
-        bOutput = new PrintStream(tempFile);
+        File fichero = new File(path2);
+        fichero.createNewFile();
+
+        bOutput = new PrintStream(fichero);
         System.setIn(bInput);
         System.setOut(bOutput);
-    }
-    @Test
-    void prueba3() throws IOException {
-        byte[] num = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba1.txt".getBytes();
-        bInput = new ByteArrayInputStream(num);
-        File tempFile=File.createTempFile("hello", ".tmp");
-        bOutput = new PrintStream(tempFile);
-        System.setIn(bInput);
-        System.setOut(bOutput);
-    }
-    @Test
-    void prueba4() throws IOException {
-        byte[] num = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba1.txt".getBytes();
-        bInput = new ByteArrayInputStream(num);
-        File tempFile=File.createTempFile("hello", ".tmp");
-        bOutput = new PrintStream(tempFile);
-        System.setIn(bInput);
-        System.setOut(bOutput);
+
+        String[] args = null;
+        Main.main(args);
+
+        boolean isTwoEqual = compararArchivos(path1,path2);
+
+        assertFalse(isTwoEqual);
     }
 }

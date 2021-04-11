@@ -28,4 +28,18 @@ class ContadorDeLetrasTest {
 
         assertArrayEquals(ficheroObtenido,resultado);
     }
+    @Test
+    public void prueba3() throws FileNotFoundException {
+        assertThrows(NullPointerException.class, () -> {
+            contadorDeLetras = new ContadorDeLetras(null);
+            contadorDeLetras.frecuencias();
+        });
+    }
+    @Test
+    public void prueba4() throws FileNotFoundException {
+        assertThrows(FileNotFoundException.class, () -> {
+            contadorDeLetras = new ContadorDeLetras(new File("/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba4.txt"));
+             contadorDeLetras.frecuencias();
+        });
+    }
 }

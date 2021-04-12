@@ -1,4 +1,4 @@
-Nombre de un fichero de texto: /home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba1.txt
+Nombre de un fichero de texto: src/main/res/prueba1.txt
 A: 5
 B: 0
 C: 2

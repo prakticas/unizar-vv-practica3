@@ -62,10 +62,10 @@ class MainTest {
 
     @Test
     void prueba1() throws IOException {
-        String path1 = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/test/res/salida-prueba1.txt";
-        String path2 = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/test/res/yes.txt";
+        String path1 = "src/test/res/salida-prueba1.txt";
+        String path2 = "src/test/res/yes.txt";
 
-        byte[] num = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba1.txt".getBytes();
+        byte[] num = "src/main/res/prueba1.txt".getBytes();
         bInput = new ByteArrayInputStream(num);
         File fichero = new File(path2);
         fichero.createNewFile();
@@ -83,8 +83,8 @@ class MainTest {
     }
     @Test
     void prueba2() throws IOException {
-        String path1 = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/test/res/salida-prueba1.txt";
-        String path2 = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/test/res/yes.txt";
+        String path1 = "src/test/res/salida-prueba1.txt";
+        String path2 = "src/test/res/yes.txt";
 
         byte[] num = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba2.txt".getBytes();
         bInput = new ByteArrayInputStream(num);

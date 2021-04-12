@@ -1,5 +1,6 @@
 package es.unizar.eina.vv6f.practica3;
 
+
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -11,7 +12,7 @@ class ContadorDeLetrasTest {
     ContadorDeLetras contadorDeLetras = null;
     @Test
     public void prueba1() throws FileNotFoundException {
-        contadorDeLetras = new ContadorDeLetras(new File("/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba1.txt"));
+        contadorDeLetras = new ContadorDeLetras(new File("src/main/res/prueba1.txt"));
         int[] ficheroObtenido = contadorDeLetras.frecuencias();
         int [] resultado=new int[27];
         resultado[0]=5;resultado[2]=2;resultado[26]=2;
@@ -20,7 +21,7 @@ class ContadorDeLetrasTest {
     }
     @Test
     public void prueba2() throws FileNotFoundException {
-        contadorDeLetras = new ContadorDeLetras(new File("/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba1.txt"));
+        contadorDeLetras = new ContadorDeLetras(new File("src/main/res/prueba1.txt"));
         int[] ficheroObtenido = contadorDeLetras.frecuencias();
         ficheroObtenido = contadorDeLetras.frecuencias();
         int [] resultado=new int[27];
@@ -38,7 +39,7 @@ class ContadorDeLetrasTest {
     @Test
     public void prueba4() throws FileNotFoundException {
         assertThrows(FileNotFoundException.class, () -> {
-            contadorDeLetras = new ContadorDeLetras(new File("/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba4.txt"));
+            contadorDeLetras = new ContadorDeLetras(new File("src/main/res/prueba4.txt"));
              contadorDeLetras.frecuencias();
         });
     }

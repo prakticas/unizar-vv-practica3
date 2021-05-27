@@ -83,6 +83,13 @@ class MainTest {
     }
     @Test
     void prueba2() throws IOException {
+        /* No entiendo el objetivo de este caso de prueba. Si se trata de comprobar la salida con un fichero
+        que no existe, enconces tendíais que comprobar que la salida es por pantalla es:
+            Nombre de un fichero de texto: /home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba2.txt
+            El fichero '/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba2.txt' no existe.
+
+        no simplemente la salida por pantalla sea distinta a la de prueba-1.txt
+         */
         String path1 = "src/test/res/salida-prueba1.txt";
         String path2 = "src/test/res/yes.txt";
 

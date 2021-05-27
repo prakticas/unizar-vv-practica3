@@ -1,12 +1,10 @@
 package es.unizar.eina.vv6f.practica3;
 
-
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ContadorDeLetrasTest {

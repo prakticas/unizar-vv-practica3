@@ -106,5 +106,11 @@ class MainTest {
         assertFalse(isTwoEqual);
     }
 
-
+    @Test
+    public void testRegenta() throws IOException {
+        System.setIn(new ByteArrayInputStream("src/main/res/regenta.txt".getBytes()));
+        Main.main(null);
+        bOutput.close();
+        assertTrue(compararArchivos("src/test/res/salida-regenta-vuestro-formato.txt", path2));
+    }
 }

@@ -2,6 +2,7 @@ package es.unizar.eina.vv6f.practica3;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
@@ -17,8 +18,10 @@ import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
@@ -60,22 +63,24 @@ class MainTest {
         System.setOut(antesOut);
     }
 
-    @Test
-    void prueba1() throws IOException {
-        String path1 = "src/test/res/salida-prueba1.txt";
-        String path2 = "src/test/res/yes.txt";
+    private final String path1 = "src/test/res/salida-prueba1.txt";
+    private final String path2 = "src/test/res/yes.txt";
 
-        byte[] num = "src/main/res/prueba1.txt".getBytes();
-        bInput = new ByteArrayInputStream(num);
+    @BeforeEach
+    void setUp() throws FileNotFoundException {
         File fichero = new File(path2);
-        fichero.createNewFile();
 
         bOutput = new PrintStream(fichero);
-        System.setIn(bInput);
         System.setOut(bOutput);
 
-        String[] args = null;
-        Main.main(args);
+    }
+
+    @Test
+    void prueba1() throws IOException {
+        bInput = new ByteArrayInputStream("src/main/res/prueba1.txt".getBytes());
+        System.setIn(bInput);
+
+        Main.main(null);
 
         boolean isTwoEqual = compararArchivos(path1,path2);
 
@@ -90,23 +95,16 @@ class MainTest {
 
         no simplemente la salida por pantalla sea distinta a la de prueba-1.txt
          */
-        String path1 = "src/test/res/salida-prueba1.txt";
-        String path2 = "src/test/res/yes.txt";
 
         byte[] num = "/home/ibon/Documents/ibon/3/verific_valid/p3/unizar-vv-practica3/src/main/res/prueba2.txt".getBytes();
         bInput = new ByteArrayInputStream(num);
-        File fichero = new File(path2);
-        fichero.createNewFile();
-
-        bOutput = new PrintStream(fichero);
         System.setIn(bInput);
-        System.setOut(bOutput);
-
-        String[] args = null;
-        Main.main(args);
+        Main.main(null);
 
         boolean isTwoEqual = compararArchivos(path1,path2);
 
         assertFalse(isTwoEqual);
     }
+
+
 }
